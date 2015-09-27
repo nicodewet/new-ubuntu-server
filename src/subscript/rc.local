@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./root/scripts/src/subscript/port8080_to_80_redirect.sh

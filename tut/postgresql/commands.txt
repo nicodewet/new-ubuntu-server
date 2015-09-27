@@ -1,0 +1,16 @@
+k7@leonidas:~$ sudo su postgres
+postgres@leonidas:/home/k7$ psql -d vouchserv -U vouchserv
+vouchserv=> \dt
+vouchserv=> SELECT * FROM public."VOUCHER_BATCH";
+vouchserv=> SELECT * FROM "VOUCHER_BATCH";
+vouchserv=> ALTER TABLE "VOUCHER_BATCH" ADD CHECK (gen_size <= req_size) NOT VALID;
+vouchserv=> SELECT * FROM public."VOUCHER_BATCH_OWNER";
+vouchserv=> \q
+
+ psql -d vouchserv -U vouchserv -f 1_postgresql.drop.sql
+ psql -d vouchserv -U vouchserv -f 2_postgresql.create.sql
+ psql -d vouchserv -U vouchserv -f 3_postgresql.alter.sql
+ psql -d vouchserv -U vouchserv
+ 
+ postgres@leonidas:/home/k7$ createuser vouchservtest -d -e -P
+ postgres@leonidas:/home/k7$ createdb vouchservtest -O vouchservtest

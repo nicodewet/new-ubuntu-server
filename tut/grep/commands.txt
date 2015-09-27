@@ -1,0 +1,3 @@
+root@leonidas:/var/log/tomcat7# zgrep Exception catalina.out.*.gz
+
+# http://javarevisited.blogspot.co.nz/2011/06/10-examples-of-grep-command-in-unix-and.html
